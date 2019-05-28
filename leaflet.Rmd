@@ -1,0 +1,39 @@
+---
+title: "Developing Data Products - R Markdown and Leaflet"
+author: "Jimmyxu"
+date: "May 26, 2019"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+---
+  title: "cssTest"
+    output:
+    html_document:
+      css: custom.css
+      toc: yes
+---
+---
+TOC {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  overflow:auto;
+}
+---
+
+
+
+```{r leaflet}
+library(leaflet)
+
+##printing the map
+my_map<-leaflet() %>%
+  addTiles() %>%
+  addMarkers(lat=42.3770, lng=-71.1167, popup="Harvard University")%>%
+  addMarkers(lat=42.3519, lng=-71.0500, popup="Boston Children's Museum")
+my_map
+```
